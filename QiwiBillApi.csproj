@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Models\CurrencyType.cs" />
+    <Compile Include="Core\Models\Qiwi.cs" />
+    <Compile Include="Core\Models\Response\Amount.cs" />
+    <Compile Include="Core\Models\Response\Customer.cs" />
+    <Compile Include="Core\Models\Response\Order.cs" />
+    <Compile Include="Core\Models\Response\OrderInfo.cs" />
+    <Compile Include="Core\Models\Response\Status.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
