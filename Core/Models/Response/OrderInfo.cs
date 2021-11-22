@@ -43,6 +43,6 @@ namespace QiwiBillApi.Core.Models.Response
                 return Json.ReadObject(Stream) as OrderInfo;
             }
         }
-
+        public static async Task<OrderInfo> CreateOrderInfoFromJSONAsync(string Order) => await Task.Run(() => CreateOrderInfoFromJSON(Order));
     }
 }

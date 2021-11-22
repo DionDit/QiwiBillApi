@@ -47,6 +47,8 @@ namespace QiwiBillApi.Core.Models.Response
                 }
             }
         }
+        public static async Task<string> CreateOrderStringJSONAsync(Order Order) => await Task.Run(() => CreateOrderStringJSON(Order));
+
         public static Order CreateOrderFromJSON(string OrderJSON)
         {
             DataContractJsonSerializer Json = new DataContractJsonSerializer(typeof(Order));
@@ -55,5 +57,7 @@ namespace QiwiBillApi.Core.Models.Response
                 return Json.ReadObject(MemoryStream) as Order;
             }
         }
+        public static async Task<Order> CreateOrderFromJSONAsync(string OrderJSON) => await Task.Run(() => CreateOrderFromJSON(OrderJSON));
+
     }
 }

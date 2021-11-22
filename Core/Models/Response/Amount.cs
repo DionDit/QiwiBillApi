@@ -32,12 +32,10 @@ namespace QiwiBillApi.Core.Models.Response
             {
                 throw new Exception("Value cannot be less than or equal to zero!");
             }
-
         }
         public Amount()
         {
 
         }
-
     }
 }

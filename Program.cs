@@ -1,4 +1,5 @@
 ﻿using QiwiBillApi.Core.Models;
+using QiwiBillApi.Core.Models.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace QiwiBillApi
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
