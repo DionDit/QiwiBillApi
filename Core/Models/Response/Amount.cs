@@ -14,19 +14,29 @@ namespace QiwiBillApi.Core.Models.Response
         public double Value { get; private set; }
         [DataMember(Name = "currency")]
         public string Currency { get; private set; }
-        public Amount(double Value, string Currency)
+        public CurrencyType CurrencyType
+        {
+            get
+            {
+                var Type = CurrencyType.RUB;
+                switch (Currency)
+                {
+                    case "RUB":
+                        Type = CurrencyType.RUB;
+                        break;
+                    case "KZT":
+                        Type = CurrencyType.KZT;
+                        break;
+                }
+                return Type;
+            }
+        }
+        public Amount(double Value, CurrencyType Currency)
         {
             if (Value > 0)
             {
-                if (!string.IsNullOrWhiteSpace(Currency))
-                {
-                    this.Value = Value;
-                    this.Currency = Currency;
-                }
-                else
-                {
-                    throw new Exception("Unknown currency!");
-                }
+                this.Value = Value;
+                this.Currency = Currency.GetDescription();
             }
             else
             {
