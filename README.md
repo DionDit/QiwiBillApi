@@ -34,3 +34,11 @@ var OrderInfo = Qiwi.OrderGetInfo(BillId);
 Console.WriteLine($"SiteId: {OrderInfo.SiteId}\nBillId: {OrderInfo.BillId}\nAmount: Value:{OrderInfo.Amount.Value} Currency: {OrderInfo.Amount.Currency}\nStatus: Value: {OrderInfo.Status.Value} ChangedDateTime: {OrderInfo.Status.ChangedDateTime}\nCustomer: Email: {OrderInfo.Customer.Email} Phone: {OrderInfo.Customer.Phone} Account: {OrderInfo.Customer.Account}\nComent: {OrderInfo.Comment}\nCreationDateTime: {OrderInfo.CreationDateTime}\nExpirationDateTime: {OrderInfo.ExpirationDateTime}\nUrl: {OrderInfo.Url}");
 ```
 ![enter image description here](https://sun9-10.userapi.com/impg/AxEXZr9_hfbZ3DK7og-Ol2cEfRp5SSZkg0Lbtw/5AH42HhwJCc.jpg?size=682x147&quality=96&sign=ad1214da19b6f7dd62284b560235ebfe&type=album)
+# Cancellation of an invoice
+``BillId is also required to cancel an invoice``
+```c#
+var RejectedOrder = Qiwi.RejectOrder("f6257803-d960-43b0-a935-393092cd8144");
+Console.WriteLine($"SiteId: {RejectedOrder.SiteId}\nBillId: {RejectedOrder.BillId}\nAmount: Value:{RejectedOrder.Amount.Value} Currency: {RejectedOrder.Amount.Currency}\nStatus: Value: {RejectedOrder.Status.Value} ChangedDateTime: {RejectedOrder.Status.ChangedDateTime}\nCustomer: Email: {RejectedOrder.Customer.Email} Phone: {RejectedOrder.Customer.Phone} Account: {RejectedOrder.Customer.Account}\nComent: {RejectedOrder.Comment}\nCreationDateTime: {RejectedOrder.CreationDateTime}\nExpirationDateTime: {RejectedOrder.ExpirationDateTime}\nUrl: {RejectedOrder.Url}");
+```
+``As a result, the account information is returned``
+![enter image description here](https://sun9-57.userapi.com/impg/owokwnz_5UdXfcjIGeNqFYi2_xmU5ZFANlpAgw/_IJ4CXX8WwA.jpg?size=686x149&quality=96&sign=888e4f058a427379c85ed0a6f6d77ce3&type=album)
