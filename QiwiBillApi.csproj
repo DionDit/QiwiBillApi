@@ -8,11 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>QiwiBillApi</RootNamespace>
     <AssemblyName>QiwiBillApi</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,9 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Models\Enums\CurrencyType.cs" />
-    <Compile Include="Core\Models\Enums\InvoicePaymentType.cs" />
-    <Compile Include="Core\Models\Extensions.cs" />
+    <Compile Include="Core\Models\CurrencyType.cs" />
     <Compile Include="Core\Models\Qiwi.cs" />
     <Compile Include="Core\Models\Response\Amount.cs" />
     <Compile Include="Core\Models\Response\Customer.cs" />
