@@ -42,3 +42,27 @@ Console.WriteLine($"SiteId: {RejectedOrder.SiteId}\nBillId: {RejectedOrder.BillI
 ```
 ``As a result, the account information is returned``
 ![enter image description here](https://sun9-57.userapi.com/impg/owokwnz_5UdXfcjIGeNqFYi2_xmU5ZFANlpAgw/_IJ4CXX8WwA.jpg?size=686x149&quality=96&sign=888e4f058a427379c85ed0a6f6d77ce3&type=album)
+# Events
+``To use events, you need to add an event handler``
+```c#
+Qiwi.OnPaidOrderAction += OrderPaid;
+
+private static void OrderPaid()
+{
+    Console.WriteLine($"The order is paid");
+}
+```
+``Now in order for the event to be called, you need to call the CheckStatus method.
+For example, you can use this:``
+
+```c#
+var Order = Qiwi.OrderGetInfo(BillId);
+await Task.Run(() =>
+{
+    while (true)
+    {
+        await Task.Delay(1000);
+        Console.WriteLine(Qiwi.CheckStatus(Order));
+    }
+});
+```
